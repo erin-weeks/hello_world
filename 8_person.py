@@ -22,4 +22,4 @@ print(musician['first'].title() + " " + musician['last'].title())
 
 musician = build_person('jimi', 'hendrix', 37)
 
-print(musician['first'].title() + " " + musician['last'] + ", " + str(age))
+print(musician['first'].title() + " " + musician['last'].title() + ", " + str(age))
