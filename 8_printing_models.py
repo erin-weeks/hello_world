@@ -8,15 +8,23 @@ Sometimes that's bad.
 #Example: 3D design printer --> orders --> printed
 
 unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
-printed_models = []
+printed = []
 
-#Simulate printing & move each item into completed
-while unprinted_designs:
-	current_design = unprinted_designs.pop()
-	msg = "Printing " + current_design + "."
-	print(msg)
-	printed_models.append(current_design)
+def print_models(to_be_printed, printed):
+	#Simulate printing
+	while to_be_printed:
+		in_print = to_be_printed.pop()
+		msg = "Printing " + in_print.title() + "."
+		print(msg)
+		
+		#Move to printed.
+		printed.append(in_print)
 
-print("\nThe following orders have been completed: ")
-for model in printed_models:
-	print(model.title())
+def finish_print(printed):
+	#Report completed jobs.
+	print("\nThe following models have been printed: ")
+	for model in printed:
+		print(model.title())
+
+print_models(unprinted_designs, printed)
+finish_print(printed)
